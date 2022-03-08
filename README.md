@@ -1,9 +1,8 @@
 ### Introduction
-This project will use python to create a word guessing game called Spaceman, a modern day version of the Hangman game. 
-A number of blank spaces will be displayed and the user will have to guess letter by letter what that word will be. 
-All guesses given by the user will be displayed. Blank spaces will be replaced by their corresponding correct letters if guessed
+This project will use Python to create a word guessing game called Spaceman, a modern day version of the Hangman game. This version of Spaceman
+will be space themed and therefore all words will be space related. A number of blank spaces will be displayed and the user will have to guess letter by letter what that word will be. All guesses given by the user will be displayed. Blank spaces will be replaced by their corresponding correct letters if guessed
 correctly by the user. If the users guess is incorrect, their chances remaining will be reduced. 
-The aim of the game, is for the user to correctly guess the word before they lose all chances.
+The aim of the game, is for the user to correctly guess the word before they lose all of their chances.
 
 
 ## UX 
