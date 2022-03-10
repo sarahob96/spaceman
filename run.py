@@ -1,5 +1,6 @@
 from pyfiglet import figlet_format
 from words import space_words
+import random
 
 print(figlet_format("Welcome to Spaceman", font = "small"))
 
@@ -14,4 +15,16 @@ def game_intro():
     print(f"Welcome {user_name}, time to play Spaceman!")
 
 
+def random_word():
+    """
+    Selects a random word from the space_words array in the words.py file
+    """
+    word = random.choice(space_words)
+    print(word)
+ 
+
+
+
+
 game_intro()
+random_word()
