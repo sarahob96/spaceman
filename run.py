@@ -22,7 +22,10 @@ def random_word():
     word = random.choice(space_words)
     print(word)
  
-
+def game():
+    word = random_word()
+    letters_guessed = []
+    chances_remaining = 6
 
 
 
