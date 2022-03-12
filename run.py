@@ -42,19 +42,23 @@ def game():
         enter_letter = input("Please enter a letter : ")
     
 
-        if enter_letter in alphabet:
-             enter_letter.join(letters_guessed)
-             print(letters_guessed)
-        elif len(enter_letter) > 1:
-            print("please enter one letter at a time")
-        else: 
-            print("please enter a valid letter")
-
         if enter_letter in letters:
             print(f"You guessed a correct letter: '{enter_letter}' ")
         else:
              print(f" Sorry, '{enter_letter}' is not in the word")
              chances_remaining = chances_remaining - 1
+
+        if enter_letter in letters_guessed:
+             print(f"You have already guessed {enter_letter}")
+        elif enter_letter in alphabet:
+             letters_guessed.append(enter_letter)
+               
+        elif len(enter_letter) > 1:
+            print("please enter one letter at a time")
+        else: 
+            print("please enter a valid letter")
+
+        
 
     
 
