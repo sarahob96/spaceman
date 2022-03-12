@@ -21,6 +21,7 @@ def random_word():
     """
     word = random.choice(space_words)
    
+    return word
  
 def game():
     """
@@ -29,6 +30,8 @@ def game():
     word = random_word()
     letters_guessed = []
     chances_remaining = 6
+    letters = set(word)
+    alphabet = set('abcdefghijklmnopqrstuvwxyz')
 
     if chances_remaining > 0:
         print(f"You have {chances_remaining} chances left")
@@ -37,8 +40,13 @@ def game():
         print(f"you have guessed these letters {letters_guessed}")
 
     enter_letter = input("Please enter a letter : ")
-    letters_guessed.append(enter_letter)
-   
+    
+
+    if enter_letter in alphabet:
+        enter_letter.join(letters_guessed)
+    else: 
+        print("please enter a valid letter")
+
     
 
     
