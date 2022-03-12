@@ -20,14 +20,29 @@ def random_word():
     Selects a random word from the space_words array in the words.py file
     """
     word = random.choice(space_words)
-    print(word)
+   
  
 def game():
+    """
+    
+    """
     word = random_word()
     letters_guessed = []
     chances_remaining = 6
 
+    if chances_remaining > 0:
+        print(f"You have {chances_remaining} chances left")
 
+    if len(letters_guessed) > 0:
+        print(f"you have guessed these letters {letters_guessed}")
+
+    enter_letter = input("Please enter a letter : ")
+    letters_guessed.append(enter_letter)
+   
+    
+
+    
 
 game_intro()
 random_word()
+game()
