@@ -33,21 +33,28 @@ def game():
     letters = set(word)
     alphabet = set('abcdefghijklmnopqrstuvwxyz')
 
-    if chances_remaining > 0:
+    while chances_remaining > 0:
         print(f"You have {chances_remaining} chances left")
 
-    if len(letters_guessed) > 0:
-        print(f"you have guessed these letters {letters_guessed}")
+        if len(letters_guessed) > 0:
+         print(f"you have guessed these letters {letters_guessed}")
 
-    enter_letter = input("Please enter a letter : ")
+        enter_letter = input("Please enter a letter : ")
     
 
-    if enter_letter in alphabet:
-        enter_letter.join(letters_guessed)
-    else: 
-        print("please enter a valid letter")
+        if enter_letter in alphabet:
+             enter_letter.join(letters_guessed)
+             print(letters_guessed)
+        elif len(enter_letter) > 1:
+            print("please enter one letter at a time")
+        else: 
+            print("please enter a valid letter")
 
-    
+        if enter_letter in letters:
+            print(f"You guessed a correct letter: '{enter_letter}' ")
+        else:
+             print(f" Sorry, '{enter_letter}' is not in the word")
+             chances_remaining = chances_remaining - 1
 
     
 
