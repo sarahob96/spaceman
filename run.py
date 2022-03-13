@@ -57,21 +57,22 @@ def game():
         enter_letter = input("Please enter a letter : ")
     
 
-        if enter_letter in letters:
-            print(f"You guessed a correct letter: '{enter_letter}' ")
-        else:
-             print(f" Sorry, '{enter_letter}' is not in the word")
-             chances_remaining = chances_remaining - 1
+        
 
         if enter_letter in letters_guessed:
              print(f"You have already guessed {enter_letter}")
         elif enter_letter in alphabet:
-             letters_guessed.append(enter_letter)
-               
+             letters_guessed.append(enter_letter)   
         elif len(enter_letter) > 1:
             print("please enter one letter at a time")
         else: 
             print("please enter a valid letter")
+
+        if enter_letter in letters:
+            print(f"You guessed a correct letter: '{enter_letter}' ")
+        else:
+             print(f" Sorry, '{enter_letter}' is not in the word")
+             chances_remaining = chances_remaining - 1 
 
         if chances_remaining == 0:
             end_of_game()
@@ -89,7 +90,127 @@ def end_of_game():
 def exit():
     print(f"Thanks {user_name} for playing Spaceman")
 
-     
+
+def illustrations():
+    spaceman = [
+        """
+                    
+                      _________________ 
+                    /      O  O  O      \ 
+                   (         _ _         )
+                    \_______|___|_______/
+                     /\               /\ 
+                             /|\ 
+                            / | \     
+                           /  |  \ 
+                      
+                              0
+                            \ | /
+                              |
+                             / \ 
+
+        """,
+    """ 
+
+                   
+                      _________________ 
+                    /      O  O  O      \ 
+                   (         _ _         )
+                    \_______|___|_______/
+                     /\               /\ 
+                             /|\ 
+                            / | \     
+                             
+                      
+
+                              0
+                             /|\ 
+                              |
+                             / \ 
+
+    """,
+    """
+
+                      
+                      _________________ 
+                    /      O  O  O      \ 
+                   (         _ _         )
+                    \_______|___|_______/
+                     /\      /|\      /\ 
+                                       
+                            
+
+
+                              0
+                             /|\ 
+                              |
+                             / \ 
+ 
+    """,
+    """
+                
+   
+                      _________________ 
+                    /      O  O  O      \ 
+                   (         _ _         )
+                    \_______|___|_______/
+                     /\               /\ 
+                             
+
+                      
+                              0
+                             /|\ 
+                              |
+                             / \ 
+
+
+
+
+    """,
+    """
+                     
+                      _________________ 
+                    /      O  O  O      \ 
+                   (                     )
+                    \___________________/
+                     /\               /\ 
+                            
+                       
+
+                              0
+                             /|\ 
+                              |
+                             / \ 
+  
+    """,
+    """
+                      _________________ 
+                    /      O  O  O      \ 
+                   (                     )
+                    \___________________/
+                                    
+                            
+                       
+
+                              0
+                             /|\ 
+                              |
+                             / \ 
+
+
+    
+    """,
+    """ 
+                    
+                              0
+                             /|\ 
+                              |
+                             / \ 
+    """,
+
+
+
+    ]
 
 game_intro()
 random_word()
