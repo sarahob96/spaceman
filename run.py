@@ -72,9 +72,24 @@ def game():
         else: 
             print("please enter a valid letter")
 
-        
+           if chances_remaining == 0:
+            end_of_game()
+    
+def end_of_game():
+    print("Sorry, you have 0 chances left")
+    print("Would you like to restart the game?")
+    print("Enter yes or no")
+    answer = input()
+    if answer == "yes":
+        game_intro()
+    else:
+        exit()
+
+
+
      
 
 game_intro()
 random_word()
 game()
+end_of_game()
