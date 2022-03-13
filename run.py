@@ -32,8 +32,22 @@ def game():
     chances_remaining = 6
     letters = set(word)
     alphabet = set('abcdefghijklmnopqrstuvwxyz')
+    
 
     while chances_remaining > 0:
+        
+        
+        correct_word = ""
+
+        for letter in word: 
+                
+            if letter in letters_guessed:
+                     correct_word = correct_word + letter
+            else:
+                     correct_word = correct_word + "_ " 
+                 
+        print(correct_word)
+
         print(f"You have {chances_remaining} chances left")
 
         if len(letters_guessed) > 0:
@@ -59,8 +73,7 @@ def game():
             print("please enter a valid letter")
 
         
-
-    
+     
 
 game_intro()
 random_word()
