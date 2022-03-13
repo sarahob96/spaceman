@@ -11,6 +11,7 @@ def game_intro():
     print("Welcome to Spaceman, the word guessing game: Space edition")
     print("Please enter a username")
 
+    global user_name
     user_name = input()
     print(f"Welcome {user_name}, time to play Spaceman!")
 
@@ -72,7 +73,7 @@ def game():
         else: 
             print("please enter a valid letter")
 
-           if chances_remaining == 0:
+        if chances_remaining == 0:
             end_of_game()
     
 def end_of_game():
@@ -85,7 +86,8 @@ def end_of_game():
     else:
         exit()
 
-
+def exit():
+    print(f"Thanks {user_name} for playing Spaceman")
 
      
 
@@ -93,3 +95,4 @@ game_intro()
 random_word()
 game()
 end_of_game()
+exit()
