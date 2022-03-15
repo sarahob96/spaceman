@@ -40,7 +40,7 @@ def game():
 
     while chances_remaining > 0:
         
-        
+        print(illustrations(chances_remaining))
         correct_word = ""
 
         for letter in word: 
@@ -51,7 +51,7 @@ def game():
                      correct_word = correct_word + "_ " 
                  
         print(correct_word)
-        print(illustrations(chances_remaining))
+        
 
         print(f"You have {chances_remaining} chances left")
 
@@ -70,6 +70,7 @@ def game():
              if enter_letter not in letters:
                  print(f" Sorry, '{enter_letter}' is not in the word")
                  chances_remaining = chances_remaining - 1
+                 
         elif len(enter_letter) > 1:
             print("please enter one letter at a time")
         else:
@@ -83,16 +84,19 @@ def game():
 
         if len(letters) == 0:
             print("Congratulations, you have guessed the word")
-            print("You win")
+            print("You escaped the aliens")
             exit()
 
+    print(illustrations(chances_remaining))
     end_of_game()
     
         
 
 
 def end_of_game():
-        print("Sorry, you have 0 chances left")
+        
+        print("OH NO.. you have 0 chances left")
+        print("You have been caught by the ALIENS")
         print("Would you like to restart the game?")
         answer = input("Please enter yes or no ")
         if answer == "yes":
@@ -123,10 +127,9 @@ def illustrations(chances_remaining):
                             / | \     
                            /  |  \ 
 
-                              0
-                            \ | /
-                              |
-                             / \ 
+                              0   
+                             \|/
+                             / \  
 
         """,
     """ 
@@ -141,10 +144,8 @@ def illustrations(chances_remaining):
                             / | \     
                              
                       
-
-                              0
+                              0   
                              /|\ 
-                              |
                              / \ 
 
     """,
@@ -158,11 +159,8 @@ def illustrations(chances_remaining):
                      /\      /|\      /\ 
                                        
                             
-
-
-                              0
+                              0   
                              /|\ 
-                              |
                              / \ 
  
     """,
@@ -176,10 +174,8 @@ def illustrations(chances_remaining):
                      /\               /\ 
                              
 
-                      
-                              0
+                              0   
                              /|\ 
-                              |
                              / \ 
 
 
@@ -195,11 +191,11 @@ def illustrations(chances_remaining):
                      /\               /\ 
                             
                        
-
-                              0
+                            
+                              0   
                              /|\ 
-                              |
                              / \ 
+                               
   
     """,
     """
@@ -211,22 +207,21 @@ def illustrations(chances_remaining):
                             
 
 
-                              0
-                             /|\ 
-                              |
-                             / \ 
 
+                              0   
+                             /|\ 
+                             / \ 
+ 
 
     
     """,
     """ 
                     
-                              0
+                              0   
                              /|\ 
-                              |
                              / \ 
     """,
-
+    
 
 
     ]
