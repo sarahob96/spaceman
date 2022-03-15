@@ -51,6 +51,7 @@ def game():
                      correct_word = correct_word + "_ " 
                  
         print(correct_word)
+        print(illustrations(chances_remaining))
 
         print(f"You have {chances_remaining} chances left")
 
@@ -106,9 +107,10 @@ def end_of_game():
 
 def exit():
     print(f"Thanks {user_name} for playing Spaceman")
+
     
 
-def illustrations():
+def illustrations(chances_remaining):
     spaceman = [
         """
                             
@@ -228,6 +230,8 @@ def illustrations():
 
 
     ]
+    return spaceman[chances_remaining]
+
 def functions ():
 
     game_intro()
