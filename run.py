@@ -11,6 +11,24 @@ def game_intro():
 
     print(figlet_format("Welcome to Spaceman", font = "small"))
     print("Welcome to Spaceman, the word guessing game: Space edition")
+    menu()
+    
+    
+
+def menu():
+    print("MENU")
+    print("1: Instructions")
+    print("2: Play game")
+    user_input = input("Please enter 1 or 2:  ")
+    if user_input == "1":
+        instructions()
+    elif user_input == "2":
+            user_name()
+    else:
+        print("Please enter a valid option")
+
+def user_name():
+
     print("Please enter a username")
 
     global user_name
@@ -98,7 +116,7 @@ def end_of_game():
         print("OH NO.. you have 0 chances left")
         print("You have been caught by the ALIENS")
         print("Would you like to restart the game?")
-        answer = input("Please enter yes or no ")
+        answer = input("Please enter yes or no:  ")
         if answer == "yes":
           game_intro()
         elif answer == "no":
@@ -111,6 +129,7 @@ def end_of_game():
 
 def exit():
     print(f"Thanks {user_name} for playing Spaceman")
+    menu()
 
     
 
@@ -230,6 +249,7 @@ def illustrations(chances_remaining):
 def functions ():
 
     game_intro()
+    user_name()
     random_word()
     game()
     end_of_game()
