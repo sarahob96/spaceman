@@ -2,18 +2,21 @@ from pyfiglet import figlet_format
 from words import space_words
 import random
 
-print(figlet_format("Welcome to Spaceman", font = "small"))
+
 
 def game_intro():
     """ 
     Welcomes user and asks them for a username
     """
+
+    print(figlet_format("Welcome to Spaceman", font = "small"))
     print("Welcome to Spaceman, the word guessing game: Space edition")
     print("Please enter a username")
 
     global user_name
     user_name = input()
     print(f"Welcome {user_name}, time to play Spaceman!")
+    game()
 
 
 def random_word():
@@ -62,39 +65,53 @@ def game():
         if enter_letter in letters_guessed:
              print(f"You have already guessed {enter_letter}")
         elif enter_letter in alphabet:
-             letters_guessed.append(enter_letter)   
+             letters_guessed.append(enter_letter)  
+             if enter_letter not in letters:
+                 print(f" Sorry, '{enter_letter}' is not in the word")
+                 chances_remaining = chances_remaining - 1
         elif len(enter_letter) > 1:
             print("please enter one letter at a time")
-        else: 
+        else:
             print("please enter a valid letter")
+        
 
         if enter_letter in letters:
             print(f"You guessed a correct letter: '{enter_letter}' ")
-        else:
-             print(f" Sorry, '{enter_letter}' is not in the word")
-             chances_remaining = chances_remaining - 1 
+            letters.remove(enter_letter)
+        
 
-        if chances_remaining == 0:
-            end_of_game()
+        if len(letters) == 0:
+            print("Congratulations, you have guessed the word")
+            print("You win")
+            exit()
+
+    end_of_game()
     
+        
+
+
 def end_of_game():
-    print("Sorry, you have 0 chances left")
-    print("Would you like to restart the game?")
-    print("Enter yes or no")
-    answer = input()
-    if answer == "yes":
-        game_intro()
-    else:
-        exit()
+        print("Sorry, you have 0 chances left")
+        print("Would you like to restart the game?")
+        answer = input("Please enter yes or no ")
+        if answer == "yes":
+          game_intro()
+        elif answer == "no":
+          exit()
+        else:
+          print("Please enter a valid answer")
+
+        
+     
 
 def exit():
     print(f"Thanks {user_name} for playing Spaceman")
-
+    
 
 def illustrations():
     spaceman = [
         """
-                    
+                            
                       _________________ 
                     /      O  O  O      \ 
                    (         _ _         )
@@ -103,7 +120,7 @@ def illustrations():
                              /|\ 
                             / | \     
                            /  |  \ 
-                      
+
                               0
                             \ | /
                               |
@@ -190,7 +207,7 @@ def illustrations():
                     \___________________/
                                     
                             
-                       
+
 
                               0
                              /|\ 
@@ -211,9 +228,12 @@ def illustrations():
 
 
     ]
+def functions ():
 
-game_intro()
-random_word()
-game()
-end_of_game()
-exit()
+    game_intro()
+    random_word()
+    game()
+    end_of_game()
+    exit()
+
+functions()
