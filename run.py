@@ -114,7 +114,7 @@ def game():
         
 
         if len(letters) == 0:
-            print("Congratulations, you have guessed the word")
+            print(f"Congratulations, you have guessed the word {word}")
             print("You escaped the aliens\n")
             exit()
 
@@ -148,8 +148,7 @@ def exit():
 
 def illustrations(chances_remaining):
     spaceman = [
-        """
-                            
+        """                  
                       _________________ 
                     /      O  O  O      \ 
                    (         _ _         )
@@ -164,9 +163,7 @@ def illustrations(chances_remaining):
                              / \  
 
         """,
-    """ 
-
-                   
+    """                 
                       _________________ 
                     /      O  O  O      \ 
                    (         _ _         )
@@ -181,9 +178,7 @@ def illustrations(chances_remaining):
                              / \ 
 
     """,
-    """
-
-                      
+    """             
                       _________________ 
                     /      O  O  O      \ 
                    (         _ _         )
@@ -197,8 +192,6 @@ def illustrations(chances_remaining):
  
     """,
     """
-                
-   
                       _________________ 
                     /      O  O  O      \ 
                    (         _ _         )
@@ -210,12 +203,8 @@ def illustrations(chances_remaining):
                              /|\ 
                              / \ 
 
-
-
-
     """,
-    """
-                     
+    """           
                       _________________ 
                     /      O  O  O      \ 
                    (                     )
@@ -227,8 +216,7 @@ def illustrations(chances_remaining):
                               0   
                              /|\ 
                              / \ 
-                               
-  
+
     """,
     """
                       _________________ 
@@ -244,8 +232,6 @@ def illustrations(chances_remaining):
                              /|\ 
                              / \ 
  
-
-    
     """,
     """ 
                     
