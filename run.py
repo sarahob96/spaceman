@@ -29,10 +29,10 @@ def menu():
 
     
     
-    print(Fore.WHITE +"\n     MENU    ")
-    print("1: Instructions")
-    print("2: Play game \n")
-    user_input = input("Please enter 1 or 2:  \n")
+    print(Fore.WHITE +"\nMENU\n")
+    print(Fore.LIGHTCYAN_EX+ "1: Instructions")
+    print(Fore.LIGHTCYAN_EX+ "2: Play game \n")
+    user_input = input(Fore.WHITE + "Please enter 1 or 2:  \n")
     if user_input == "1":
         instructions()
         
@@ -68,7 +68,11 @@ def user_name():
     print(Fore.WHITE + "Please enter a username \n")
     global users_name
     users_name = input().upper()
-
+    while len(users_name) < 1:
+        print(Fore.RED + "Please enter a valid username")
+        print(Fore.WHITE + "Please enter a username \n")
+        users_name = input().upper()
+    
     print(Fore.LIGHTMAGENTA_EX + f" \nWelcome {users_name}, time to play Spaceman!")
     
     game()
@@ -157,14 +161,14 @@ def end_of_game():
         print("You have been caught by the ALIENS \n")
         print(Fore.LIGHTMAGENTA_EX+ f"The correct word was: {word}\n ")
         print(Fore.WHITE + "Would you like to restart the game?\n")
-        answer = input("Please enter yes or no:  \n")
-        if answer == "yes":
+        restart_answer = input("Please enter yes or no:  \n")
+        if restart_answer == "yes":
           reset_screen()
           user_name()
-        elif answer == "no":
+        elif restart_answer == "no":
           reset_screen()
           game_heading()
-          exit()
+          print(Fore.LIGHTMAGENTA_EX + f"Thanks {users_name} for playing Spaceman \n")
         else:
           print(Fore.RED + "Please enter a valid answer\n")
 
@@ -173,17 +177,15 @@ def end_of_game():
 
 def exit():
     
-    print(Fore.CYAN + f"Thanks {users_name} for playing Spaceman \n")
-    exit_decision = input("\n Would you like another go at escaping the aliens? Enter yes or no: ")
+    print(Fore.LIGHTMAGENTA_EX + f"Thanks {users_name} for playing Spaceman \n")
+    exit_decision = input(Fore.WHITE + "\nWould you like another go at escaping the aliens? Enter yes or no: ")
     if exit_decision == "yes":
         reset_screen()
         user_name()
-    elif answer == "no":
+    elif exit_decision == "no":
         reset_screen()
-        print("We hope to see you back playing Spaceman soon!")
-    
-
-    
+        print(Fore.YELLOW + "We hope to see you back playing Spaceman soon!")
+      
 
 def illustrations(chances_remaining):
     spaceman = [
