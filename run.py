@@ -1,21 +1,24 @@
 from pyfiglet import figlet_format
 from words import space_words
 import random
+import os
 
-
+def reset_screen():
+    os.system('reset')
 
 def game_intro():
     """ 
     Welcomes user and asks them for a username
     """
 
-    print(figlet_format("Welcome to Spaceman", font = "small"))
+    print(figlet_format("Spaceman", font = "small"))
     print("Welcome to Spaceman, the word guessing game: Space edition")
     menu()
     
     
 
 def menu():
+    reset_screen()
     print("\nMENU")
     print("1: Instructions")
     print("2: Play game \n")
@@ -28,6 +31,7 @@ def menu():
         print("Please enter a valid option")
 
 def instructions():
+    reset_screen()
     print(" \nSPACEMAN")
     print("The aim of the game is to avoid the aliens by guessing the correct word before your chances run out ")
     print("1) You will have 6 chances to guess the right answer")
@@ -41,7 +45,7 @@ def instructions():
 
 
 def user_name():
-
+    reset_screen()
     print("Please enter a username \n")
 
     global user_name
