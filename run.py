@@ -2,6 +2,7 @@
 All imports are listed here
 """
 import os
+import sys
 import random
 from pyfiglet import figlet_format
 from colorama import init, Fore
@@ -33,12 +34,11 @@ def game_intro():
     print(Fore.YELLOW + "Welcome to Spaceman, the word guessing game")
     print(Fore.LIGHTCYAN_EX + "\nDo you think you can avoid the aliens?")
     print(Fore.LIGHTCYAN_EX + "Play now and find out..")
-
+    print("----------------------------------------------")
     menu()
 
 
 def menu():
-
     """
     Displays a menu to the user and asks for user input
     """
@@ -61,10 +61,10 @@ def instructions():
     reset_screen()
     game_heading()
     print(Fore.YELLOW + " \nSPACEMAN \n")
-    print("The aim of the game is to avoid being abducted by the aliens")
-    print("You can only do this by correctly guessing the word\n")
-    print("1) You will have 6 chances to guess the right answer")
-    print("2) All words are space related ")
+    print(Fore.CYAN + "The aim of the game is to avoid an alien abduction")
+    print("You can only do this by correctly guessing the word!\n")
+    print(Fore.YELLOW + "1) You will have 6 chances to guess the right answer")
+    print("2) All words are space themed")
     print("3) Each wrong guess means you are a step closer to the spaceship ")
     print("4) You can restart the game at the end of each game ")
     print("5) Goodluck \n")
@@ -102,7 +102,7 @@ def random_word():
     global word
     word = random.choice(space_words)
 
-    return word.upper()
+    return word
 
 
 def game():
@@ -119,8 +119,9 @@ def game():
 
     while chances_remaining > 0:
 
+        print(Fore.WHITE + "\n=============================================\n")
         print(Fore.YELLOW + illustrations(chances_remaining))
-        correct_word = ""
+        correct_word = Fore.YELLOW + ""
 
         for letter in word:
 
@@ -170,6 +171,7 @@ def game():
             print("You have escaped the aliens\n")
             thanks_for_playing()
 
+    print(Fore.RED + "\n==============================================\n")
     print(illustrations(chances_remaining))
     end_of_game()
 
@@ -191,30 +193,27 @@ def end_of_game():
     elif restart_answer == "no":
         reset_screen()
         game_heading()
-        print(
-            Fore.LIGHTMAGENTA_EX +
-            f"Thanks {users_name} for playing Spaceman \n")
+        print(Fore.LIGHTMAGENTA_EX + f"Thanks for playing {users_name}\n")
+        sys.exit()
     else:
-        print(Fore.RED + "Please enter a valid answer\n")
+        menu()
 
 
 def thanks_for_playing():
     """
     Thanks user for playing and gives them choice to play again
     """
-    print(
-        Fore.LIGHTMAGENTA_EX +
-        f"Thanks {users_name} for playing Spaceman \n")
-    exit_decision = input(
-        Fore.WHITE +
-        "\nWould you like another go at escaping the aliens?\
-             Enter yes or no: ")
-    if exit_decision == "yes":
+    print(Fore.MAGENTA + f"(Thanks for playing Spaceman {users_name}  \n")
+    decision = input(Fore.WHITE + "\nWould you like another game? yes or no: ")
+    if decision == "yes":
         reset_screen()
         user_name()
-    elif exit_decision == "no":
+    elif decision == "no":
         reset_screen()
         print(Fore.YELLOW + "We hope to see you back playing Spaceman soon!")
+        sys.exit()
+    else:
+        menu()
 
 
 def illustrations(chances_remaining):
@@ -225,77 +224,77 @@ def illustrations(chances_remaining):
     spaceman = [
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (         _ _         )
                     \\_______|___|_______/
-                     /\\               /\
-                             /|\
-                            / | \
-                           /  |  \
+                     /\\               /\\
+                             /|\\
+                            / | \\
+                           /  |  \\
 
                               0
                              \\|/
-                             / \
+                             / \\
 
         """,
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (         _ _         )
                     \\_______|___|_______/
-                     /\\               /\
-                             /|\
-                            / | \
+                     /\\               /\\
+                             /|\\
+                            / | \\
 
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
 
         """,
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (         _ _         )
                     \\_______|___|_______/
-                     /\\      /|\\      /\
+                     /\\      /|\\      /\\
 
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
 
         """,
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (         _ _         )
                     \\_______|___|_______/
-                     /\\               /\
+                     /\\               /\\
 
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
 
     """,
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (                     )
                     \\___________________/
-                     /\\               /\
+                     /\\               /\\
 
 
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
 
     """,
         """
                       _________________
-                    /      O  O  O      \
+                    /      O  O  O      \\
                    (                     )
                     \\___________________/
 
@@ -304,15 +303,17 @@ def illustrations(chances_remaining):
 
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
 
     """,
         """
 
                               0
-                             /|\
-                             / \
+                             /|\\
+                             / \\
+
+
     """,
 
 

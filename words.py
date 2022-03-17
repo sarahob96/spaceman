@@ -1,4 +1,4 @@
-""" 
+"""
 This file contains the space-themed words used in the game
 """
 space_words = [
@@ -7,18 +7,18 @@ space_words = [
    "galaxy",
    "star",
    "moon",
-   "cosmos", 
+   "cosmos",
    "gravity",
    "rocket",
    "constellation",
    "pluto",
-   "alien", 
+   "alien",
    "mars",
    "starship",
-   "planets", 
+   "planets",
    "astronomy",
-   "neptune", 
-   "uranus", 
+   "neptune",
+   "uranus",
    "earth",
    "constant",
    "interstellar",
@@ -31,15 +31,15 @@ space_words = [
    "meteorite",
    "lunar",
    "solstice",
-   "asteroid", 
+   "asteroid",
    "satellite",
    "sky",
    "astronomy",
    "telescope",
    "eclipse",
-   "sun", 
+   "sun",
    "zodiac",
    "astronomer",
-   "comet" 
+   "comet"
 
  ]
