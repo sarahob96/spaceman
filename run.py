@@ -3,35 +3,43 @@ from words import space_words
 import random
 import os
 
-def reset_screen():
-    os.system('reset')
+
 
 def game_intro():
     """ 
-    Welcomes user and asks them for a username
+    Welcomes user
     """
-
-    print(figlet_format("Spaceman", font = "small"))
+    game_heading()
     print("Welcome to Spaceman, the word guessing game: Space edition")
+
+    
     menu()
     
     
 
 def menu():
-    reset_screen()
+
+    
+    
     print("\nMENU")
     print("1: Instructions")
     print("2: Play game \n")
     user_input = input("Please enter 1 or 2:  \n")
     if user_input == "1":
         instructions()
+        
     elif user_input == "2":
-            user_name()
+        reset_screen() 
+        user_name()
+            
     else:
         print("Please enter a valid option")
+        reset_screen()
 
 def instructions():
+   
     reset_screen()
+    game_heading()
     print(" \nSPACEMAN")
     print("The aim of the game is to avoid the aliens by guessing the correct word before your chances run out ")
     print("1) You will have 6 chances to guess the right answer")
@@ -40,17 +48,25 @@ def instructions():
     print("4) You will be given the chance to restart the game at the end of each game ")
     print("5) Goodluck \n")
     
-    user_name()
+    users_input = input("Press 1 to play the game:  ")
+    if users_input == "1":
+        reset_screen()
+        user_name()
+    
+ 
+    
     
 
 
 def user_name():
-    reset_screen()
+    
+    game_heading()
     print("Please enter a username \n")
+    global users_name
+    users_name = input().upper()
 
-    global user_name
-    user_name = input()
-    print(f" \n Welcome {user_name}, time to play Spaceman!")
+    print(f" \nWelcome {users_name}, time to play Spaceman!")
+    
     game()
 
 
@@ -66,6 +82,8 @@ def game():
     """
     
     """
+  
+    global word 
     word = random_word()
     letters_guessed = []
     chances_remaining = 6
@@ -103,7 +121,7 @@ def game():
         elif enter_letter in alphabet:
              letters_guessed.append(enter_letter)  
              if enter_letter not in letters:
-                 print(f" Sorry, '{enter_letter}' is not in the word")
+                 print(f"\nSorry, '{enter_letter}' is not in the word")
                  chances_remaining = chances_remaining - 1
                  
         elif len(enter_letter) > 1:
@@ -118,7 +136,7 @@ def game():
         
 
         if len(letters) == 0:
-            print(f"Congratulations, you have guessed the word {word}")
+            print(f"Congratulations, you have guessed the word: {word}")
             print("You escaped the aliens\n")
             exit()
 
@@ -132,11 +150,14 @@ def end_of_game():
         
         print("OH NO.. you have 0 chances left")
         print("You have been caught by the ALIENS \n")
+        print(f"The correct word was: {word}\n ")
         print("Would you like to restart the game?\n")
         answer = input("Please enter yes or no:  \n")
         if answer == "yes":
+          reset_screen()
           game_intro()
         elif answer == "no":
+          reset_screen()
           exit()
         else:
           print("Please enter a valid answer\n")
@@ -145,8 +166,10 @@ def end_of_game():
      
 
 def exit():
-    print(f"Thanks {user_name} for playing Spaceman \n")
-    menu()
+    game_heading()
+    print(f"Thanks {users_name} for playing Spaceman \n")
+
+    
 
     
 
@@ -248,9 +271,17 @@ def illustrations(chances_remaining):
 
     ]
     return spaceman[chances_remaining]
+    
+
+def reset_screen():
+    os.system('reset')
+
+def game_heading():
+    print(figlet_format("Spaceman", font = "small"))   
 
 def functions ():
-
+   
+   
     game_intro()
     menu()
     instructions()
