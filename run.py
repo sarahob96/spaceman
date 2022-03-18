@@ -69,10 +69,15 @@ def instructions():
     print("4) You can restart the game at the end of each game ")
     print("5) Goodluck \n")
 
-    users_input = input(Fore.CYAN + "Press 1 to play the game:  ")
+    users_input = input(Fore.CYAN + "Press 1 to play the game or 2 to exit:  ")
     if users_input == "1":
         reset_screen()
         user_name()
+    elif users_input == "2":
+        print("Hope to see you back playing soon!")
+        sys.exit()
+    else:
+        print(Fore.RED + "\nPlease enter a valid option")
 
 
 def user_name():
@@ -144,7 +149,7 @@ def game():
         enter_letter = input(Fore.WHITE + "Please enter a letter : \n")
 
         if enter_letter in letters_guessed:
-            print(Fore.RED + f"You have already guessed {enter_letter}\n")
+            print(Fore.RED + f"You have already guessed {enter_letter}")
         elif enter_letter in alphabet:
             letters_guessed.append(enter_letter)
             if enter_letter not in letters:
@@ -154,7 +159,7 @@ def game():
                 chances_remaining = chances_remaining - 1
 
         elif len(enter_letter) > 1:
-            print(Fore.RED + "please enter one letter at a time\n")
+            print(Fore.RED + "\nplease enter one letter at a time")
         else:
             print(Fore.RED + "please enter a valid letter\n")
 
@@ -183,7 +188,7 @@ def end_of_game():
     """
     print(Fore.YELLOW + "OH NO.. you have 0 chances left")
     print("You have been caught by the ALIENS \n")
-    print(Fore.LIGHTMAGENTA_EX + f"The correct word was: {word}\n ")
+    print(Fore.LIGHTMAGENTA_EX + f"The correct word was: {word}\n")
     print(Fore.WHITE + "Would you like to restart the game?\n")
     restart_answer = input("Please enter yes or no:  \n")
 
@@ -204,7 +209,7 @@ def thanks_for_playing():
     """
     Thanks user for playing and gives them choice to play again
     """
-    print(Fore.MAGENTA + f"Thanks for playing Spaceman {users_name}  \n")
+    print(Fore.MAGENTA + f"Thanks for playing Spaceman {users_name}\n")
     decision = input(Fore.WHITE + "\nWould you like another game? yes or no: ")
     if decision == "yes":
         reset_screen()
@@ -212,7 +217,7 @@ def thanks_for_playing():
         game()
     elif decision == "no":
         reset_screen()
-        print(Fore.YELLOW + "We hope to see you back playing Spaceman soon!")
+        print(Fore.YELLOW + "We hope to see you back playing Spaceman soon!\n")
         sys.exit()
     else:
         menu()
