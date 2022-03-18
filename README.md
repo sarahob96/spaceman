@@ -48,7 +48,8 @@ The flowchart depicts the flow of the game depending on user input.
 
 ### Game banner
 The main game header can be seen at every stage of the game. It was created using the pyfiglet library and gives the feel of a real game application
-  ![header](readme-images/game-header.png)
+ 
+ ![header](readme-images/game-header.png)
 
 ### Tagline
 The user is given a short synopsis of the game as the application starts.
@@ -64,6 +65,7 @@ If a user is unsure of the game concept, the can view the instructions which giv
 
 ### Username
 Before gameplay, the user is asked for a username of at least 1 character in length. If no username is entered, they will be asked to enter a valid username.
+
 ![username](readme-images/username.png)
 
 ### The Game
@@ -79,36 +81,50 @@ The concept of the game means that for every chance lost, the user is a step clo
 The game starts off as just the user (the stick drawing).
  
  ![stage1](readme-images/Stage_1.png)
+ 
+ 
     
 #### Stage 2 
 The spaceship has started to approach
   
   ![stage2](readme-images/Stage_2.png)
+  
+  
     
 #### Stage 3
 The legs on the spaceship have appeared
  
  ![stage3](readme-images/Stage_3.png)
+ 
+ 
     
 #### Stage 4
 The door on the spaceship has opened
  
  ![stage4](readme-images/Stage_4.png)
  
+ 
+ 
 #### Stage 5
 A level of beams are seen coming from the spaceship
   
  ![stage5](readme-images/Stage_5.png)
  
+ 
+ 
 #### Stage 6 
 A second level of beams are seen
   
   ![stage6](readme-images/Stage_6.png)
+  
+  
  
 #### Stage 7
 A third and final level of beams are seen. The user has been caught by the aliens
 
   ![stage7](readme-images/Stage_7.png)
+  
+  
   
 ### Game outcomes
 
@@ -118,6 +134,7 @@ If the user correctly guesses the word before their chances run out, the user is
 
 #### Incorrect word
 If the user does not guess the word in time, they are told they have zero chances remaining and have been caught. They are also given an option to try again.
+
 ![wrong](readme-images/wrong.png)
 
 #### Play again 
