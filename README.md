@@ -239,8 +239,17 @@ A number of other checks were done to ensure the application worked as it should
 ### Validation
 I validated my Python code using the online [PEP8](http://pep8online.com/) validator.
 Initially, minor errors appeared including 'trailing whitespace' and 'too many blank lines'.
+
+![error](readme-images/error.png)
+
 This errors were fixed and the final code was ran for both my run.py and words.py files. 
 Both showed no errors.
+
+#### PEP8 run.py validated
+![run](readme-images/run.validation.png)
+
+#### PEP8 words.py validated
+![words](readme-images/words.validation.png)
 
 ### Bugs/Errors
 
@@ -250,7 +259,20 @@ Both showed no errors.
 
 ## Deployment
 
-This project was created in gitpod. 
+* This project was created in gitpod and deployed using Heroku.
+* A number of steps were carried out to ensure a successful deployment. 
+* The final code was pushed to github and then heroku was used.
+
+1) On the Heroku website, log in to your account once signed up.
+2) Click on "create new app" once logged in.
+3) Give the app a name and choose the correct region, USA or Europe
+4) Click on the settings tab 
+5) Once in settings, go to the "Config Vars" and add the KEY:PORT and the VALUE:8000
+6) After, go to the "buildpacks" section and add buildbacks 'Python' and 'node.js'
+7) Go to the deployment section and click on the 'connect to Github' option
+8) Choose the repository name you want to deploy and click 'connect'.
+9) Choose between the 'automatic' and 'manual' deploys
+10) Finally select the branch to deploy and heroku will build the final live app.
 
 ## Credits
 
@@ -259,6 +281,7 @@ This project was created in gitpod.
 * A mention to stack overflow and the code institute slack groups for help along the way.
 * Credit to [geeks for geeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/) that gave me the idea for the exit function using the sys library as well as using the pyfiglet library to create ASCII art font for the main game banner.
 * Credit to [Dev to](https://dev.to/visheshdvivedi/get-colored-console-output-in-python-using-colorama-4gci) for informing me on colorama and how to use it.
+* Credit to the 'Kite' channel on youtube. The use of code for the illustrations was adapted from their channel.
 
 
 ### Acknowledgements 
