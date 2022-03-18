@@ -220,10 +220,33 @@ A number of other checks were done to ensure the application worked as it should
 
 
 ### Validation
+I validated my Python code using the online [PEP8](http://pep8online.com/) validator.
+Initially, minor errors appeared including 'trailing whitespace' and 'too many blank lines'.
+This errors were fixed and the final code was ran for both my run.py and words.py files. 
+Both showed no errors.
 
 ### Bugs/Errors
 
+* Minor errors found through the PEP8 validator were fixed.
+
+* An initial error found in the code, was that chances remaining decreased when letters already guessed wrong were entered again, aswell as invalid inputs. I fixed this by nesting an if statement within an if/elif/else statement so that they chances remaining were only deducted from if the letter guessed was in the alphabet but not in the correct word.
+
 ## Deployment
 
+This project was created in gitpod. 
+
 ## Credits
+
+### Code
+
+* A mention to stack overflow and the code institute slack groups for help along the way.
+* Credit to [geeks for geeks](https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/) that gave me the idea for the exit function using the sys library as well as using the pyfiglet library to create ASCII art font for the main game banner.
+* Credit to [Dev to](https://dev.to/visheshdvivedi/get-colored-console-output-in-python-using-colorama-4gci) for informing me on colorama and how to use it.
+
+
+### Acknowledgements 
+
+* A special mention to my mentor, Narender Singh who gave me great feedback and advice for the project.
+* Thanks to my family who played the game multiple times and gave me helpful user feedback.
+
 
