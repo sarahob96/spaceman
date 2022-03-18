@@ -52,14 +52,17 @@ def menu():
         reset_screen()
         user_name()
     else:
-        print("Please enter a valid option")
         reset_screen()
+        game_heading()
+        print(Fore.RED + "\nPlease enter a valid option")
+        menu()
 
 
 def instructions():
     "displays list of gameplay instructions"
     reset_screen()
     game_heading()
+
     print(Fore.YELLOW + " \nSPACEMAN \n")
     print(Fore.CYAN + "The aim of the game is to avoid an alien abduction")
     print("You can only do this by correctly guessing the word!\n")
@@ -70,14 +73,19 @@ def instructions():
     print("5) Goodluck \n")
 
     users_input = input(Fore.CYAN + "Press 1 to play the game or 2 to exit:  ")
+
+    # checks users input and redirects them
+
     if users_input == "1":
         reset_screen()
         user_name()
     elif users_input == "2":
-        print("Hope to see you back playing soon!")
+        reset_screen()
+        game_heading()
+        print(Fore.CYAN + "Hope to see you back playing soon!\n")
         sys.exit()
     else:
-        print(Fore.RED + "\nPlease enter a valid option")
+        instructions()
 
 
 def user_name():
@@ -86,16 +94,18 @@ def user_name():
     """
     game_heading()
     print(Fore.WHITE + "Please enter a username \n")
-    global users_name
-    users_name = input().upper()
-    while len(users_name) < 1:
-        print(Fore.RED + "Please enter a valid username")
+
+    global USERS_NAME
+    USERS_NAME = input().upper()
+
+    while len(USERS_NAME) < 1:
+        print(Fore.RED + "Please enter a valid username\n")
         print(Fore.WHITE + "Please enter a username \n")
-        users_name = input().upper()
+        USERS_NAME = input().upper()
     reset_screen()
     print(
         Fore.LIGHTMAGENTA_EX +
-        f" \nWelcome {users_name}, time to play Spaceman!")
+        f" \nWelcome {USERS_NAME}, time to play Spaceman!")
 
     game()
 
@@ -104,10 +114,10 @@ def random_word():
     """
     Selects a random word from the space_words array in the words.py file
     """
-    global word
-    word = random.choice(space_words)
+    global WORD
+    WORD = random.choice(space_words)
 
-    return word
+    return WORD
 
 
 def game():
@@ -119,27 +129,33 @@ def game():
     word = random_word()
     letters_guessed = []
     chances_remaining = 6
-    letters = set(word)
+    letters = set(WORD)
     alphabet = set('abcdefghijklmnopqrstuvwxyz')
 
+    # While loop runs until the user has 0 chances remaining
     while chances_remaining > 0:
 
         print(Fore.WHITE + "\n=============================================\n")
         print(Fore.YELLOW + illustrations(chances_remaining))
         correct_word = Fore.YELLOW + ""
 
-        for letter in word:
+        # displays the letters in the correct word as '_' until guessed
+
+        for letter in WORD:
 
             if letter in letters_guessed:
                 correct_word = correct_word + letter
             else:
                 correct_word = correct_word + "_ "
-
         print(correct_word)
+
+        # prints remaining chances left to the user
 
         print(
             Fore.LIGHTBLUE_EX +
-            f"\nYou have {chances_remaining} chances left \n")
+            f"\nYou have {chances_remaining} chance(s) left \n")
+
+        # prints a list of lettrs guessed to the user
 
         if len(letters_guessed) > 0:
             print(
@@ -147,6 +163,8 @@ def game():
                 f"you have guessed these letters: {letters_guessed} \n")
 
         enter_letter = input(Fore.WHITE + "Please enter a letter : \n")
+
+        # checks user input to see if it is valid/in the alphabet/not in word
 
         if enter_letter in letters_guessed:
             print(Fore.RED + f"You have already guessed {enter_letter}")
@@ -157,18 +175,19 @@ def game():
                     Fore.RED +
                     f"\nSorry, '{enter_letter}' is not in the word")
                 chances_remaining = chances_remaining - 1
-
         elif len(enter_letter) > 1:
             print(Fore.RED + "\nplease enter one letter at a time")
         else:
             print(Fore.RED + "please enter a valid letter\n")
 
+        # checks if letter guessed is in the word
         if enter_letter in letters:
             print(
                 Fore.GREEN +
                 f"You guessed a correct letter: '{enter_letter}'\n ")
             letters.remove(enter_letter)
 
+        # If the user has guessed the correct word, the loop will be exited
         if len(letters) == 0:
             reset_screen()
             game_heading()
@@ -188,7 +207,7 @@ def end_of_game():
     """
     print(Fore.YELLOW + "OH NO.. you have 0 chances left")
     print("You have been caught by the ALIENS \n")
-    print(Fore.LIGHTMAGENTA_EX + f"The correct word was: {word}\n")
+    print(Fore.LIGHTMAGENTA_EX + f"The correct word was: {WORD}\n")
     print(Fore.WHITE + "Would you like to restart the game?\n")
     restart_answer = input("Please enter yes or no:  \n")
 
@@ -199,17 +218,20 @@ def end_of_game():
     elif restart_answer == "no":
         reset_screen()
         game_heading()
-        print(Fore.LIGHTMAGENTA_EX + f"Thanks for playing {users_name}\n")
+        print(Fore.LIGHTMAGENTA_EX + f"Thanks for playing {USERS_NAME}\n")
         sys.exit()
     else:
-        menu()
+        reset_screen()
+        game_heading()
+        print(Fore.RED + "please enter a valid answer\n")
+        end_of_game()
 
 
 def thanks_for_playing():
     """
     Thanks user for playing and gives them choice to play again
     """
-    print(Fore.MAGENTA + f"Thanks for playing Spaceman {users_name}\n")
+    print(Fore.MAGENTA + f"Thanks for playing Spaceman {USERS_NAME}\n")
     decision = input(Fore.WHITE + "\nWould you like another game? yes or no: ")
     if decision == "yes":
         reset_screen()
@@ -228,6 +250,7 @@ def illustrations(chances_remaining):
     """
     Contains all illustrations corresponding to amount of chances remaining
     """
+    # Code to access illustrations was adapted from KITE on youtube
     spaceman = [
         """
                       _________________
@@ -345,4 +368,5 @@ def spaceman_workflow():
     thanks_for_playing()
 
 
-spaceman_workflow()
+if __name__ == "__main__":
+    spaceman_workflow()
