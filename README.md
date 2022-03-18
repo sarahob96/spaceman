@@ -233,6 +233,7 @@ I tested the game manually at different steps throughout the game to ensure the 
   
 ##### Special Characters
 * I ensured that if input is not included in the alphabet, then an error message will display to the user saying to 'enter a valid letter'
+
 ![character](readme-images/special-character.png)
 
 A number of other checks were done to ensure the application worked as it should.
