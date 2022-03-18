@@ -117,8 +117,12 @@ If the user correctly guesses the word before their chances run out, the user is
 ![correct](readme-images/correct_word.png)
 
 #### Incorrect word
+If the user does not guess the word in time, they are told they have zero chances remaining and have been caught. They are also given an option to try again.
+![wrong](readme-images/wrong.png)
 
 #### Play again 
+If the user wants to play again, they will be redirected straight to gameplay without being asked for a username again. 
+![replay](readme-images/replay-no-username.png)
 
 #### End of game
 If the user decides to exit the game, a message appears and the application ends.
@@ -178,6 +182,42 @@ A number of built-in Python libraries were used in the game application
 
 
 ### Manual testing
+I tested the game manually at different steps throughout the game to ensure the correct outcome occurred. 
+
+#### Menu Options
+* I ensured that when '1' was entered, the user was directed to the instructions. 
+* If '2' was entered, the user was redirected straight to choosing a username.
+* If an option, not '1' or '2' was entered, an error message would appear asking for a valid option.
+
+![menu](readme-images/valid-menu-option.png)
+
+#### Valid Username
+* I checked to ensure that if a user did not give any input for the username, that they would be displayed an error message asking them for a valid username. When a username of 1 character or more is entered, the user is welcomed and are redirected to gameplay.
+
+![username](readme-images/valid-username.png)
+
+#### Valid letter guess
+
+##### Already guessed
+* I checked that if a letter that had already been guessed was input, then an error message stating 'you have already guessed this letter' will appear. I also made sure it didn't effect the amount of chances remaining
+![guesses](readme-images/already-guessed-letter.png)
+  
+##### Multiple letters
+* If more than one letter is input by the user, an error message will show to say to 'please enter one letter at a time'
+![multiple](readme-images/multiple_input.png)
+  
+##### Special Characters
+* I ensured that if input is not included in the alphabet, then an error message will display to the user saying to 'enter a valid letter'
+![character](readme-images/special-character.png)
+
+A number of other checks were done to ensure the application worked as it should.
+
+1) If the correct word was guessed, I made sure the game play ended and the user was redirected and asked if they would like to play again.
+2) I ensured the number of chances decreased 1 by 1 as wrong guesses were made.
+3) If the number of chances remaining were equal to 0, I made sure the game ended and the illustrations were inline with the result. The user would be given the option to replay.
+4) I checked that if the user wanted to replay the game that they were redirected straight to game play
+5) If the user wanted to exit the game, I made sure that the app closed.
+
 
 ### Validation
 
