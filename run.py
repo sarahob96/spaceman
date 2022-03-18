@@ -15,7 +15,7 @@ def reset_screen():
     """
     Resets the screen once called
     """
-    os.system('reset')
+    os.system('printf "\ec"')
 
 
 def game_heading():
