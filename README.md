@@ -16,12 +16,18 @@
 * Credits
 
 ## Introduction
-This project will use Python to create a word guessing game called Spaceman, a modern day version of the Hangman game. This version of Spaceman
-will be space themed and therefore all words will be space related. A number of blank spaces will be displayed and the user will have to guess letter by letter what that word will be. All guesses given by the user will be displayed. Blank spaces will be replaced by their corresponding correct letters if guessed
+This project will use Python to create a word guessing game called Spaceman, a modern day version of the Hangman game. This version of Spaceman is space themed and therefore all words are space related. A number of blank spaces will be displayed and the user will have to guess letter by letter what that word will be. All guesses given by the user will be displayed. Blank spaces will be replaced by their corresponding correct letters if guessed
 correctly by the user. If the users guess is incorrect, their chances remaining will be reduced. 
 The aim of the game, is for the user to correctly guess the word before they lose all of their chances.
 
- 
+## Concept
+Spaceman takes on the concept of the traditional hangman game but with a twist. The aim of the game is to guess the word to avoid being abducted by aliens. The less chances the user has, the closer the spaceship is to the user. If no chances remain, the illustrations provided in the game will show the beams from the spaceship abduct the player. Conversely, if the correct word is guessed, the user escapes the abduction.
+
+### Flowchart 
+The flowchart depicts the flow of the game depending on user input.
+
+![flow](readme-images/flowchart.png)
+
 
 ## UX 
 
@@ -37,8 +43,6 @@ The aim of the game, is for the user to correctly guess the word before they los
   * As a returning user, I want to be replay the game
   * As a returning user, I want there to be a new word to guess.
 
-### Flowchart 
-![flow](readme-images/flowchart.png)
 
 ## Design and Layout
 
@@ -65,6 +69,7 @@ Before gameplay, the user is asked for a username of at least 1 character in len
 ### The Game
 After the username is submitted, the page is refreshed and the user is welcomed to the game. The stick figure appears and the user is asked to enter a letter. The number of chances the user has at each moment, will appear after each round.
 ![game](readme-images/gameplay.png)
+
 
 
 ### Spaceman Stages
@@ -105,6 +110,20 @@ A third and final level of beams are seen. The user has been caught by the alien
 
   ![stage7](readme-images/Stage_7.png)
   
+### Game outcomes
+
+#### Correct word
+If the user correctly guesses the word before their chances run out, the user is redirected to a congratulations message that tells them they escaped the aliens. They are also given the option to play again. 
+![correct](readme-images/correct_word.png)
+
+#### Incorrect word
+
+#### Play again 
+
+#### End of game
+If the user decides to exit the game, a message appears and the application ends.
+![endgame](readme-images/end_game.png)
+
 
 ## Technologies Used
 
@@ -162,7 +181,7 @@ A number of built-in Python libraries were used in the game application
 
 ### Validation
 
-### Bugs / Errors
+### Bugs/Errors
 
 ## Deployment
 
