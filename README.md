@@ -30,7 +30,7 @@ The aim of the game, is for the user to correctly guess the word before they los
 
 #### New user goals
   * As a new user, I want to be given clear instructions to how the game works
-  * As a new user, I want to see what guesses I've already made
+  * As a new user, I want to see what guesses I've already made while playing the game
   * As a new user, I want to know how many chances I have remaining throughout the game
 
 #### Returning user goals
@@ -53,11 +53,46 @@ The aim of the game, is for the user to correctly guess the word before they los
 - [Heroku](http://heroku.com/)
   * Heroku was used to deploy the game application
 
+### Python libraries used
+
+A number of built-in Python libraries were used in the game application
+
+- random : The random library was used to generate a random word from the list of words in the the words.py
+
+- os : The os library was necessary to reset the terminal at certain parts of the game. It can be seen when the user selects an option from the menu and when the game finishes or resets. I did not use this feature in the gameplay itself after each guess as I thought for the user, it would be worth having the option to scroll up and see the illustrations stages in the game. 
+
+- sys : The sys library was needed to add an exit method (sys.exit()) to the 'end of game' and 'thanks for playing' function so that the app would stop running and allow the user to exit the game.
+
+- Colorama :  The colorama library was imported to add colour to text in the terminal. 
+
+- Pyfiglet : The pyfiglet library was installed to convert the normal text 'Spaceman' header into a large art font header.
+
 ## Features to be implemented
+
+- A hint feature where the user could ask for a clue regarding the word to be guessed. If a hint is used by the user, their number of chances could be reduced by 1 or 2 to make the game more interesting but also more user friendly.
+- A scoreboard feature where the user could check previous scores. Correct word guesses would be ranked from the most chances remaining to least amount of chances.
 
 ## Testing
 
-### User story Testing
+### New user story Testing
+
+- " As a new user, I want to be given clear instructions to how the game works"
+  * The menu feature provides an instructions option so the user can be informed before they play"
+  
+- " As a new user, I want to see what guesses I've already made while playing the game"
+  * An updated list of letters guessed by the user appears after each guess is made
+  
+- " As a new user, I want to know how many chances I have remaining throughout the game"
+  * The user is given 6 chances at the beginning of the game to guess the correct word. They're informed of how many chances are left after each guess is made.
+
+#### Returning user goals
+
+- "As a returning user, I want to be replay the game."
+  * The game can be played by the user an unlimited amount of times. The user is also gie 
+
+- "As a returning user, I want there to be a new word to guess."
+  * A variety of 35+ words and the use of the imported random library to generate a random word, gives the user a chance to play the game with a new word to guess each time.
+
 
 ### Manual testing
 
