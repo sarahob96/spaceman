@@ -135,7 +135,7 @@ def game():
     # While loop runs until the user has 0 chances remaining
     while chances_remaining > 0:
 
-        print(Fore.WHITE + "\n=============================================\n")
+        print(Fore.WHITE + "=============================================")
         print(Fore.YELLOW + illustrations(chances_remaining))
         correct_word = Fore.YELLOW + ""
 
@@ -153,7 +153,7 @@ def game():
 
         print(
             Fore.LIGHTBLUE_EX +
-            f"\nYou have {chances_remaining} chance(s) left \n")
+            f"\nYou have {chances_remaining} chance(s) left")
 
         # prints a list of lettrs guessed to the user
 
@@ -178,13 +178,13 @@ def game():
         elif len(enter_letter) > 1:
             print(Fore.RED + "\nplease enter one letter at a time")
         else:
-            print(Fore.RED + "please enter a valid letter\n")
+            print(Fore.RED + "please enter a valid letter")
 
         # checks if letter guessed is in the word
         if enter_letter in letters:
             print(
                 Fore.GREEN +
-                f"You guessed a correct letter: '{enter_letter}'\n ")
+                f"You guessed a correct letter: '{enter_letter}' ")
             letters.remove(enter_letter)
 
         # If the user has guessed the correct word, the loop will be exited
@@ -195,7 +195,7 @@ def game():
             print("You have escaped the aliens\n")
             thanks_for_playing()
 
-    print(Fore.RED + "\n==============================================\n")
+    print(Fore.RED + "==============================================")
     print(illustrations(chances_remaining))
     end_of_game()
 
