@@ -42,6 +42,70 @@ The aim of the game, is for the user to correctly guess the word before they los
 
 ## Design and Layout
 
+### Game banner
+The main game header can be seen at every stage of the game. It was created using the pyfiglet library and gives the feel of a real game application
+  ![header](readme-images/game-header.png)
+
+### Tagline
+The user is given a short synopsis of the game as the application starts.
+  ![tagline](readme-images/Tagline.png)
+ 
+### Menu
+The menu is seen when the game load. The menu requires user input, asking the user to either read the instructions or go straight to game play
+ ![menu](readme-images/menu.png)
+
+### Instructions
+If a user is unsure of the game concept, the can view the instructions which gives a few key points about the Spaceman game. From here, the user is asked for further input, to go to game play or to exit the application
+![instructions](readme-images/instructions.png)
+
+### Username
+Before gameplay, the user is asked for a username of at least 1 character in length. If no username is entered, they will be asked to enter a valid username.
+![username](readme-images/username.png)
+
+### The Game
+After the username is submitted, the page is refreshed and the user is welcomed to the game. The stick figure appears and the user is asked to enter a letter. The number of chances the user has at each moment, will appear after each round.
+![game](readme-images/gameplay.png)
+
+
+### Spaceman Stages
+The concept of the game means that for every chance lost, the user is a step closer to being abducted by the aliens. 
+
+#### Stage 1
+The game starts off as just the user (the stick drawing).
+ 
+ ![stage1](readme-images/Stage_1.png)
+    
+#### Stage 2 
+The spaceship has started to approach
+  
+  ![stage2](readme-images/Stage_2.png)
+    
+#### Stage 3
+The legs on the spaceship have appeared
+ 
+ ![stage3](readme-images/Stage_3.png)
+    
+#### Stage 4
+The door on the spaceship has opened
+ 
+ ![stage4](readme-images/Stage_4.png)
+ 
+#### Stage 5
+A level of beams are seen coming from the spaceship
+  
+ ![stage5](readme-images/Stage_5.png)
+ 
+#### Stage 6 
+A second level of beams are seen
+  
+  ![stage6](readme-images/Stage_6.png)
+ 
+#### Stage 7
+A third and final level of beams are seen. The user has been caught by the aliens
+
+  ![stage7](readme-images/Stage_7.png)
+  
+
 ## Technologies Used
 
 - [lucid chart](http://www.lucidchart.com)
@@ -88,7 +152,7 @@ A number of built-in Python libraries were used in the game application
 #### Returning user goals
 
 - "As a returning user, I want to be replay the game."
-  * The game can be played by the user an unlimited amount of times. The user is also gie 
+  * The game can be played by the user an unlimited amount of times. The user is also given the option to replay the game when they finish the current one.  
 
 - "As a returning user, I want there to be a new word to guess."
   * A variety of 35+ words and the use of the imported random library to generate a random word, gives the user a chance to play the game with a new word to guess each time.
