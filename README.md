@@ -46,6 +46,10 @@ The flowchart depicts the flow of the game depending on user input.
 
 ## Design and Layout
 
+I wanted the design to be simple while also making it exciting to play. The colours added to the game, giving it a more fun feel. Therefore improving the users experience of the game.
+I also wanted the user to easily navigate through the game with no issues. This was aided by using minimal text where user input was needed so what was asked of the user was simple.
+
+
 ### Game banner
 The main game header can be seen at every stage of the game. It was created using the pyfiglet library and gives the feel of a real game application
  
@@ -288,5 +292,5 @@ Both showed no errors.
 
 * A special mention to my mentor, Narender Singh who gave me great feedback and advice for the project.
 * Thanks to my family who played the game multiple times and gave me helpful user feedback.
-
+* Thanks to Scott and Ed at the code Institute for help with a few deployment issues I had.
 
