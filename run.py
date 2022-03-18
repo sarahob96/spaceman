@@ -87,7 +87,7 @@ def user_name():
         print(Fore.RED + "Please enter a valid username")
         print(Fore.WHITE + "Please enter a username \n")
         users_name = input().upper()
-
+    reset_screen()
     print(
         Fore.LIGHTMAGENTA_EX +
         f" \nWelcome {users_name}, time to play Spaceman!")
@@ -189,7 +189,8 @@ def end_of_game():
 
     if restart_answer == "yes":
         reset_screen()
-        user_name()
+        game_heading()
+        game()
     elif restart_answer == "no":
         reset_screen()
         game_heading()
@@ -203,11 +204,12 @@ def thanks_for_playing():
     """
     Thanks user for playing and gives them choice to play again
     """
-    print(Fore.MAGENTA + f"(Thanks for playing Spaceman {users_name}  \n")
+    print(Fore.MAGENTA + f"Thanks for playing Spaceman {users_name}  \n")
     decision = input(Fore.WHITE + "\nWould you like another game? yes or no: ")
     if decision == "yes":
         reset_screen()
-        user_name()
+        game_heading()
+        game()
     elif decision == "no":
         reset_screen()
         print(Fore.YELLOW + "We hope to see you back playing Spaceman soon!")
