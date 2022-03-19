@@ -50,12 +50,12 @@ The flowchart depicts the flow of the game depending on user input.
 
 ## Design and Layout
 
-I wanted the design to be simple while also making it exciting to play. The colours added to the game, giving it a more fun feel. Therefore improving the users experience of the game.
+I wanted the design to be simple while also making it exciting to play. The colours added to the game, give it a more fun feel. Therefore improving the users experience of the game.
 I also wanted the user to easily navigate through the game with no issues. This was aided by using minimal text where user input was needed so what was asked of the user was simple.
 
 
 ### Game banner
-The main game header can be seen at every stage of the game. It was created using the pyfiglet library and gives the feel of a real game application
+The main game header can be seen at every stage of the game. It was created using the pyfiglet library and gives the feel of a real game application.
  
  ![header](readme-images/game-header.png)
 
@@ -64,11 +64,11 @@ The user is given a short synopsis of the game as the application starts.
   ![tagline](readme-images/Tagline.png)
  
 ### Menu
-The menu is seen when the game load. The menu requires user input, asking the user to either read the instructions or go straight to game play
+The menu is seen when the game loads. The menu requires user input, asking the user to either read the instructions or go straight to game play.
  ![menu](readme-images/menu.png)
 
 ### Instructions
-If a user is unsure of the game concept, the can view the instructions which gives a few key points about the Spaceman game. From here, the user is asked for further input, to go to game play or to exit the application
+If a user is unsure of the game concept, they can view the instructions which gives a few key points about the Spaceman game. From here, the user is asked for further input, to go to game play or to exit the application.
 ![instructions](readme-images/instructions.png)
 
 ### Username
@@ -77,7 +77,7 @@ Before gameplay, the user is asked for a username of at least 1 character in len
 ![username](readme-images/username.png)
 
 ### The Game
-After the username is submitted, the page is refreshed and the user is welcomed to the game. The stick figure appears and the user is asked to enter a letter. The number of chances the user has at each moment, will appear after each round.
+After the username is submitted, the page is refreshed and the user is welcomed to the game. The stick figure appears and the user is asked to enter a letter. The number of chances the user has at each moment will appear after each round.
 ![game](readme-images/gameplay.png)
 
 
@@ -157,27 +157,27 @@ If the user decides to exit the game, a message appears and the application ends
 ## Technologies Used
 
 - [lucid chart](http://www.lucidchart.com)
-  * I used lucid chart to create a flowchart to create the process flow of the game
+  * I used lucid chart to create a flowchart to create the process flow of the game.
 - [Techsini](https://techsini.com/multi-mockup/)
-  *  A multi device image was generated on techsini.com\
+  *  A multi device image was generated on techsini.com.
 - [PEP8](http://pep8online.com/)
-  * The online PEP8 validator was used to ensure there were no errors in my python code
+  * The online PEP8 validator was used to ensure there were no errors in my python code.
 - [Heroku](http://heroku.com/)
-  * Heroku was used to deploy the game application
+  * Heroku was used to deploy the game application.
 
 ### Python libraries used
 
-A number of built-in Python libraries were used in the game application
+A number of built-in Python libraries were used in the game application.
 
-- random : The random library was used to generate a random word from the list of words in the the words.py
+- random : The random library was used to generate a random word from the list of words in the the words.py.
 
-- os : The os library was necessary to reset the terminal at certain parts of the game. It can be seen when the user selects an option from the menu and when the game finishes or resets. I did not use this feature in the gameplay itself after each guess as I thought for the user, it would be worth having the option to scroll up and see the illustrations stages in the game. 
+- os : The os library was necessary to reset the terminal at certain parts of the game. It can be seen when the user selects an option from the menu and when the game finishes or resets. I did not use this feature in the gameplay itself after each guess as I thought for the user, it would be worth having the option to scroll up and see the progress of the illustrations throughout the game. 
 
 - sys : The sys library was needed to add an exit method (sys.exit()) to the 'end of game' and 'thanks for playing' function so that the app would stop running and allow the user to exit the game.
 
 - Colorama :  The colorama library was imported to add colour to text in the terminal. 
 
-- Pyfiglet : The pyfiglet library was installed to convert the normal text 'Spaceman' header into a large art font header.
+- Pyfiglet : The pyfiglet library was installed to convert the normal text 'Spaceman' into a large art font header.
 
 ## Features to be implemented
 
@@ -203,7 +203,7 @@ A number of built-in Python libraries were used in the game application
   * The game can be played by the user an unlimited amount of times. The user is also given the option to replay the game when they finish the current one.  
 
 - "As a returning user, I want there to be a new word to guess."
-  * A variety of 35+ words and the use of the imported random library to generate a random word, gives the user a chance to play the game with a new word to guess each time.
+  * A variety of 35+ words and the use of the imported random library to generate a random word, gives the user a chance to play the game with a new word to guess a large number of times.
 
 
 ### Manual testing
@@ -264,7 +264,7 @@ Both showed no errors.
 
 * Minor errors found through the PEP8 validator were fixed.
 
-* An initial error found in the code, was that chances remaining decreased when letters already guessed wrong were entered again, aswell as invalid inputs. I fixed this by nesting an if statement within an if/elif/else statement so that they chances remaining were only deducted from if the letter guessed was in the alphabet but not in the correct word.
+* An initial error found in the code was that chances remaining decreased when letters already guessed wrong were entered again, aswell as invalid inputs. I fixed this by nesting an if statement within an if/elif/else statement so that they chances remaining were only deducted from if the letter guessed was in the alphabet but not in the correct word.
 
 ## Deployment
 
